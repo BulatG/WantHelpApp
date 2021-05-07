@@ -1,0 +1,31 @@
+
+    [
+        {
+        "id" : 1,
+        "name" : "Дети",
+        "image" : "https://github.com/BulatG/Swift/blob/main/invalidName.png"
+        },
+        {
+        "id" : 2,
+        "name" : "Взрослые",
+        "image" : "https://github.com/BulatG/Swift/blob/main/invalidName.png"
+        },
+        {
+        "id" : 3,
+        "name" : "Пожилые",
+        "image" : "https://github.com/BulatG/Swift/blob/main/invalidName.png"
+        },
+        {
+        "id" : 4,
+        "name" : "Животные",
+        "image" : "https://github.com/BulatG/Swift/blob/main/invalidName.png"
+        },
+        {
+        "id" : 5,
+        "name" : "Мероприятия",
+        "image" : "https://github.com/BulatG/Swift/blob/main/invalidName.png"
+        }
+    ]
+
+
+
