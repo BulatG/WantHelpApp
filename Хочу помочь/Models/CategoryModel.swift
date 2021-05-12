@@ -11,8 +11,8 @@ import UIKit
 struct Category: Codable {
     let id : Int
     let name : String
-    let image : URL
-    init(id : Int, name: String, image : URL) {
+    let image : String
+    init(id : Int, name: String, image : String) {
         self.id = id
         self.name = name
         self.image = image

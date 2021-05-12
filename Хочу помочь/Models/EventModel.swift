@@ -17,7 +17,11 @@ struct Event : Codable {
     let adress : String
     let phone : String
     let description2 : String
-    init(id : Int,title : String, description : String, footer : String, fundName : String, adress : String, phone : String, description2 : String) {
+    var mainImage :  String
+    var image2 : String
+    var image3 : String
+    init(id : Int,title : String, description : String, footer : String, fundName : String,
+         adress : String, phone : String, description2 : String, mainImage : String, image2 : String, image3 : String) {
         self.id = id
         self.title = title
         self.description = description
@@ -26,5 +30,8 @@ struct Event : Codable {
         self.adress = adress
         self.phone = phone
         self.description2 = description2
+        self.mainImage = mainImage
+        self.image2 = image2
+        self.image3 = image3
     }
 }

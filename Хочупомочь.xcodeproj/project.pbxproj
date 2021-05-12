@@ -26,7 +26,6 @@
 		9E485741262875810061EC0F /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E485740262875810061EC0F /* CustomCollectionViewCell.swift */; };
 		9E485745262A349A0061EC0F /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E485744262A349A0061EC0F /* TestViewController.swift */; };
 		9E48574B262A3C510061EC0F /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E48574A262A3C510061EC0F /* TabBarViewController.swift */; };
-		9E79E24E263B543C00A669FE /* test.json in Resources */ = {isa = PBXBuildFile; fileRef = 9E79E24D263B543C00A669FE /* test.json */; };
 		9EA7C9A4263444EF00F2015D /* DetailEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA7C9A3263444EF00F2015D /* DetailEventViewController.swift */; };
 		9ED275C72639901D00AC281A /* DetailEvent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9ED275C52639901D00AC281A /* DetailEvent.storyboard */; };
 		9ED275CB263AE48700AC281A /* category.json in Resources */ = {isa = PBXBuildFile; fileRef = 9ED275CA263AE48600AC281A /* category.json */; };
@@ -58,7 +57,6 @@
 		9E485740262875810061EC0F /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
 		9E485744262A349A0061EC0F /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		9E48574A262A3C510061EC0F /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
-		9E79E24D263B543C00A669FE /* test.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = test.json; sourceTree = "<group>"; };
 		9EA7C9A3263444EF00F2015D /* DetailEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEventViewController.swift; sourceTree = "<group>"; };
 		9ED275C62639901D00AC281A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Хочу помочь/Storyboard/Base.lproj/DetailEvent.storyboard"; sourceTree = "<group>"; };
 		9ED275CA263AE48600AC281A /* category.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = category.json; sourceTree = "<group>"; };
@@ -181,7 +179,6 @@
 				9ED275D8263B03EA00AC281A /* parsingServise  */,
 				9ED275CD263AE57200AC281A /* events.json */,
 				9ED275CA263AE48600AC281A /* category.json */,
-				9E79E24D263B543C00A669FE /* test.json */,
 			);
 			name = JSON;
 			path = ..;
@@ -259,7 +256,6 @@
 				9ED275CB263AE48700AC281A /* category.json in Resources */,
 				9E16845B26331BD0003A60A5 /* Fonts in Resources */,
 				9ED275C72639901D00AC281A /* DetailEvent.storyboard in Resources */,
-				9E79E24E263B543C00A669FE /* test.json in Resources */,
 				9E16845E26331BF0003A60A5 /* OfficinaSansExtraBoldSCC.otf in Resources */,
 				9E16846126331BF4003A60A5 /* SF UI Text Regular.ttf in Resources */,
 			);

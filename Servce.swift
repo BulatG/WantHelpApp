@@ -10,9 +10,9 @@ import UIKit
 
 class Servise {
     
-    public func takeFileCategory() -> (masName: [String],masImage: [URL]) {
+    public func takeFileCategory() -> (masName: [String],masImage: [String]) {
         var massivName : [String] = []
-        var massivImage : [URL] =  []
+        var massivImage : [String] = []
         if let category = Bundle.main.path(forResource: "category", ofType: "json") {
             do {
                 let contents = try String(contentsOfFile: category)
@@ -46,7 +46,6 @@ class Servise {
                 let jsonData = Data(contents.utf8)
                 let decoder = JSONDecoder()
                 let res = try decoder.decode([Event].self, from: jsonData)
-                //print("РАЗМЕР МАССИВА\(res.count)")
                 print(res[2])
                 for item in 0..<res.count {
                     massiv.append(res[item])

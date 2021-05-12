@@ -303,7 +303,7 @@
                                             <outlet property="footerLabel" destination="nTC-26-14W" id="gxu-G8-qLM"/>
                                             <outlet property="image" destination="UNa-gK-jUa" id="n2k-ag-3dO"/>
                                             <outlet property="title" destination="jsi-Ef-Gcs" id="21b-C4-yyD"/>
-                                            <segue destination="TBn-1R-v3u" kind="push" identifier="detailidentifier" id="F7o-h6-q4E"/>
+                                            <segue destination="TBn-1R-v3u" kind="show" identifier="detailidentifier" id="93Y-sS-Saa"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -315,48 +315,28 @@
                                     <constraint firstAttribute="height" constant="43" id="AAI-P3-WuS"/>
                                 </constraints>
                             </containerView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n9O-g0-TWE">
-                                <rect key="frame" x="16" y="98" width="198" height="28"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="7mN-td-KZi">
+                                <rect key="frame" x="16" y="98" width="396" height="29"/>
                                 <color key="backgroundColor" red="0.40000000000000002" green="0.65098039215686276" blue="0.21176470588235294" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" title="Текущие">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="titleShadowColor" red="0.91764705879999997" green="0.65098039220000004" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mT8-vX-1uR">
-                                <rect key="frame" x="214" y="98" width="198" height="28"/>
-                                <state key="normal">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Завершенные">
-                                            <attributes>
-                                                <color key="NSColor" red="0.40000000000000002" green="0.65098039215686276" blue="0.21176470588235294" alpha="1" colorSpace="calibratedRGB"/>
-                                                <font key="NSFont" metaFont="system" size="15"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </state>
-                            </button>
+                                <segments>
+                                    <segment title="Текущие"/>
+                                    <segment title="Завершенные"/>
+                                </segments>
+                                <color key="tintColor" red="0.40000000000000002" green="0.65098039215686276" blue="0.21176470588235294" alpha="1" colorSpace="calibratedRGB"/>
+                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="WRO-tu-mZD"/>
                         <color key="backgroundColor" red="0.90980392156862744" green="0.92941176470588238" blue="0.92941176470588238" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="n9O-g0-TWE" firstAttribute="leading" secondItem="WRO-tu-mZD" secondAttribute="leading" constant="16" id="5MA-pC-QVq"/>
                             <constraint firstItem="8mA-Tf-b6O" firstAttribute="leading" secondItem="WRO-tu-mZD" secondAttribute="leading" constant="8" id="8ph-gD-5bh"/>
+                            <constraint firstItem="7mN-td-KZi" firstAttribute="top" secondItem="WRO-tu-mZD" secondAttribute="top" constant="10" id="8td-zN-vgR"/>
                             <constraint firstItem="64F-hV-wuJ" firstAttribute="trailing" secondItem="WRO-tu-mZD" secondAttribute="trailing" id="AFh-IF-Tu1"/>
+                            <constraint firstItem="8mA-Tf-b6O" firstAttribute="top" secondItem="7mN-td-KZi" secondAttribute="bottom" constant="19" id="Kt8-cZ-jT3"/>
                             <constraint firstItem="64F-hV-wuJ" firstAttribute="leading" secondItem="WRO-tu-mZD" secondAttribute="leading" id="POP-5a-Rs1"/>
-                            <constraint firstItem="8mA-Tf-b6O" firstAttribute="top" secondItem="mT8-vX-1uR" secondAttribute="bottom" constant="19" id="QFe-8c-KSt"/>
+                            <constraint firstItem="7mN-td-KZi" firstAttribute="leading" secondItem="WRO-tu-mZD" secondAttribute="leading" constant="16" id="QZC-SF-WEx"/>
                             <constraint firstItem="64F-hV-wuJ" firstAttribute="top" secondItem="WRO-tu-mZD" secondAttribute="top" id="ROn-n5-Ucv"/>
-                            <constraint firstItem="mT8-vX-1uR" firstAttribute="height" secondItem="n9O-g0-TWE" secondAttribute="height" id="SsB-QT-z2s"/>
-                            <constraint firstItem="mT8-vX-1uR" firstAttribute="leading" secondItem="n9O-g0-TWE" secondAttribute="trailing" id="WCb-B9-3Jd"/>
-                            <constraint firstItem="mT8-vX-1uR" firstAttribute="width" secondItem="n9O-g0-TWE" secondAttribute="width" id="asG-IE-lVn"/>
-                            <constraint firstItem="mT8-vX-1uR" firstAttribute="leading" secondItem="n9O-g0-TWE" secondAttribute="trailing" id="eyY-wu-AjJ"/>
-                            <constraint firstItem="mT8-vX-1uR" firstAttribute="top" secondItem="WRO-tu-mZD" secondAttribute="top" constant="10" id="ghO-gu-zid"/>
-                            <constraint firstItem="8mA-Tf-b6O" firstAttribute="top" secondItem="n9O-g0-TWE" secondAttribute="bottom" constant="19" id="jkc-V4-MkN"/>
-                            <constraint firstItem="WRO-tu-mZD" firstAttribute="trailing" secondItem="mT8-vX-1uR" secondAttribute="trailing" constant="16" id="lOV-KS-CEj"/>
+                            <constraint firstItem="WRO-tu-mZD" firstAttribute="trailing" secondItem="7mN-td-KZi" secondAttribute="trailing" constant="16" id="UyG-aA-d2n"/>
                             <constraint firstItem="WRO-tu-mZD" firstAttribute="trailing" secondItem="8mA-Tf-b6O" secondAttribute="trailing" constant="8" id="nIu-Uz-y3n"/>
-                            <constraint firstItem="n9O-g0-TWE" firstAttribute="top" secondItem="WRO-tu-mZD" secondAttribute="top" constant="10" id="rXi-1J-67Q"/>
                             <constraint firstItem="8mA-Tf-b6O" firstAttribute="top" secondItem="WRO-tu-mZD" secondAttribute="top" constant="57" id="xOI-L3-s3K"/>
                             <constraint firstItem="8mA-Tf-b6O" firstAttribute="bottom" secondItem="WRO-tu-mZD" secondAttribute="bottom" id="yBX-QR-hYa"/>
                         </constraints>
@@ -366,8 +346,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="8mA-Tf-b6O" id="771-Dq-cOj"/>
-                        <outlet property="completedButton" destination="mT8-vX-1uR" id="rX6-6T-uQt"/>
-                        <outlet property="currentButton" destination="n9O-g0-TWE" id="GOW-0f-eNW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="STB-dG-62t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

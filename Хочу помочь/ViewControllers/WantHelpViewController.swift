@@ -18,26 +18,16 @@ class WantHelpViewController: UIViewController, UICollectionViewDataSource, UICo
         super.viewDidLoad()
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
-//        person.append(HelpModel(title: "Дети", image: UIImage(named: "invalidName")!))
-//        person.append(HelpModel(title: "Взрослые", image: UIImage(named: "invalidName-4")!))
-//        person.append(HelpModel(title: "Пожилые", image: UIImage(named: "invalidName-3")!))
-//        person.append(HelpModel(title: "Животные", image: UIImage(named: "invalidName-2")!))
-//        person.append(HelpModel(title: "Мероприятия", image: UIImage(named: "invalidName-1")!))
         descriptionLabel.font = UIFont(name: "SF UI Text Regular", size: 17)
         descriptionLabel.textColor = UIColor(red: 73/255, green: 74/255, blue: 74/255, alpha: 1)
         let width = (view.frame.width-27)/2
         print(width)
         let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout
         layout!.itemSize = CGSize(width: width, height: width)
-        
         self.tabBarController?.tabBar.isHidden = false
-        
         for index in 0..<category.masName.count {
             categoryModel.append(Category(id: 1, name: category.masName[index], image: category.masImage[index]))
         }
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -45,19 +35,20 @@ class WantHelpViewController: UIViewController, UICollectionViewDataSource, UICo
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? CustomCollectionViewCell
+        
         let model = categoryModel[indexPath.row]
+        cell?.invalidImage.image = UIImage(named: categoryModel[indexPath.row].image)
+        cell?.invalidTitle?.text = categoryModel[indexPath.row].name
         cell!.configure(with: model)
         return cell!
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-
         return 10
      }
 
      func collectionView(_ collectionView: UICollectionView, layout
                  collectionViewLayout: UICollectionViewLayout,
                                  minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-
       return 10
      }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
