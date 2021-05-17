@@ -13,7 +13,7 @@ class CollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var footerLabel: UILabel!
     func confgiure(with kids: Event){
-        //image.image = kids.image
+        image.image = UIImage(named: kids.mainImage)
         title.text = kids.title
         descriptionLabel.text = kids.description
         footerLabel.text = kids.footer

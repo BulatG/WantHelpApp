@@ -9,8 +9,9 @@ import UIKit
 
 class CharityEventsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     @IBOutlet weak var collectionView: UICollectionView!
-    var jsonEventFunc = Servise().takeFileEvents()
-    var jsonEvent : [Event] = []
+    //var jsonEventFunc = Servise().takeFileEvents()
+    //var jsonEvent : [Event] = []
+    var events : [Event]?
     var indicator = UIActivityIndicatorView()
     
     override func viewDidLoad() {
@@ -22,12 +23,30 @@ class CharityEventsViewController: UIViewController, UICollectionViewDelegate, U
         let backButton = UIBarButtonItem()
         backButton.title = ""
         self.navigationController!.navigationBar.topItem!.backBarButtonItem = backButton
-        for index in 0..<jsonEventFunc.count {
-            jsonEvent.append(Event(id: jsonEventFunc[index].id, title: jsonEventFunc[index].title,
-                                   description: jsonEventFunc[index].description, footer: jsonEventFunc[index].footer,
-                                   fundName: jsonEventFunc[index].fundName, adress:jsonEventFunc[index].adress, phone: jsonEventFunc[index].phone,
-                                   description2: jsonEventFunc[index].description2, mainImage: jsonEventFunc[index].mainImage,
-                                   image2: jsonEventFunc[index].image2, image3: jsonEventFunc[index].image3))
+        //        for index in 0..<jsonEventFunc.count {
+        //            jsonEvent.append(Event(id: jsonEventFunc[index].id, title: jsonEventFunc[index].title,
+        //                                   description: jsonEventFunc[index].description, footer: jsonEventFunc[index].footer,
+        //                                   fundName: jsonEventFunc[index].fundName, adress:jsonEventFunc[index].adress, phone: jsonEventFunc[index].phone,
+        //                                   description2: jsonEventFunc[index].description2, mainImage: jsonEventFunc[index].mainImage,
+        //                                   image2: jsonEventFunc[index].image2, image3: jsonEventFunc[index].image3))
+        //        }
+        self.view.addSubview(indicator)
+        indicator.hidesWhenStopped = true
+        indicator.center = self.view.center
+        indicator.startAnimating()
+        
+        Servise().takeFileEvents { [weak self] result in
+            guard let self = self else {
+                return
+            }
+            switch result {
+            case .success(let result):
+                self.events = result
+                self.collectionView.reloadData()
+                self.indicator.stopAnimating()
+                
+            case .failure(_):break
+            }
         }
     }
     
@@ -41,19 +60,17 @@ class CharityEventsViewController: UIViewController, UICollectionViewDelegate, U
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        jsonEvent.count
+        events?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "kidsCell", for: indexPath) as? CollectionViewCell
-        DispatchQueue.main.async { [self] in
-            showSpinner()
-            cell?.image.image = UIImage(named: jsonEvent[indexPath.row].mainImage)
-            let model = jsonEvent[indexPath.row]
-            removeSpinner()
+        //cell?.image.image = UIImage(named: jsonEvent[indexPath.row].mainImage)
+        if let model = events?[indexPath.row]{
             cell!.confgiure(with: model)
-            cell?.tag = indexPath.row
         }
+        
+        cell?.tag = indexPath.row
         return cell!
         
     }
@@ -64,18 +81,15 @@ class CharityEventsViewController: UIViewController, UICollectionViewDelegate, U
         switch segueIdentifier {
         case SegueIdentifier.myPost.rawValue:
             if let collectionViewCell = sender as? UICollectionViewCell {
-                DispatchQueue.main.async { [self] in
-                    showSpinner()
-                    let index = collectionViewCell.tag
-                    let postModel = jsonEvent[index]
-                    let destController = segue.destination as! DetailEventViewController
-                    destController.post = postModel
-                    destController.onEditPostHandler = { [weak self] model in
-                        guard let self = self else { return }
-                        self.jsonEvent[index] = model
-                        self.collectionView.reloadData()
-                    }
-                    removeSpinner()
+                let index = collectionViewCell.tag
+                //let postModel = jsonEvent[index]
+                let postmodel = events?[index]
+                let destController = segue.destination as! DetailEventViewController
+                destController.post = postmodel
+                destController.onEditPostHandler = { [weak self] model in
+                    guard let self = self else { return }
+                    self.events?[index] = model
+                    self.collectionView.reloadData()
                 }
             }
         default:
