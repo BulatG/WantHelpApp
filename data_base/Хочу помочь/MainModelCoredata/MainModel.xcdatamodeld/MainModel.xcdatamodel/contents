@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="20F71" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Categories" representedClassName=".Categories" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="image" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="events" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Events" inverseName="category" inverseEntity="Events"/>
+    </entity>
+    <entity name="Events" representedClassName=".Events" syncable="YES" codeGenerationType="class">
+        <attribute name="adress" optional="YES" attributeType="String"/>
+        <attribute name="des" optional="YES" attributeType="String"/>
+        <attribute name="des2" optional="YES" attributeType="String"/>
+        <attribute name="footer" optional="YES" attributeType="String"/>
+        <attribute name="fundName" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="image2" optional="YES" attributeType="String"/>
+        <attribute name="image3" optional="YES" attributeType="String"/>
+        <attribute name="mainImage" optional="YES" attributeType="String"/>
+        <attribute name="phone" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Categories" inverseName="events" inverseEntity="Categories"/>
+    </entity>
+    <elements>
+        <element name="Categories" positionX="-545.5411987304688" positionY="-3.1090087890625" width="128" height="88"/>
+        <element name="Events" positionX="-54" positionY="-9" width="128" height="208"/>
+    </elements>
+</model>
