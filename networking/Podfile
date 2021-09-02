@@ -1,0 +1,15 @@
+	pod 'Firebase/Storage'# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'WantHelp' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for WantHelp
+pod 'Firebase/Analytics'
+pod 'Firebase/Storage'
+pod 'FirebaseDatabase'
+pod 'FirebaseStorage'
+pod 'CodableFirebase'
+pod 'Alamofire'
+end
